@@ -1,0 +1,166 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+
+<head>
+  <!-- Basic -->
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <!-- Mobile Metas -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <!-- Site Metas -->
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+  <meta name="author" content="" />
+
+  <title>Shifana CA</title>
+
+  <!-- slider stylesheet -->
+  <link rel="stylesheet" type="text/css"
+    href="{% static 'https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.1.3/assets/owl.carousel.min.css' %}" />
+
+
+  <!-- font wesome stylesheet -->
+  <link rel="stylesheet" href="{% static 'https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css' %}">
+
+  <!-- bootstrap core css -->
+  <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.css' %}" />
+
+  <!-- fonts style -->
+  <link href="https://fonts.googleapis.com/css?family=Poppins:400,600,700&display=swap" rel="stylesheet">
+  <!-- Custom styles for this template -->
+  <link href="{% static 'css/style.css' %}" rel="stylesheet" />
+  <!-- responsive style -->
+  <link href="{% static 'css/responsive.css' %}" rel="stylesheet" />
+</head>
+
+<body class="sub_page">
+  <div class="hero_area">
+    <!-- header section strats -->
+    <header class="header_section">
+      <div class="container">
+        <nav class="navbar navbar-expand-lg custom_nav-container pt-3">
+          <a class="navbar-brand mr-5" href="index.html">
+            <img src="{% static 'images/logo.png' %}" alt="">
+            <span>
+              SHIFANA
+            </span>
+          </a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <div class="d-flex ml-auto flex-column flex-lg-row align-items-center">
+              <ul class="navbar-nav  ">
+                <li class="nav-item ">
+                  <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="/about"> About </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="/resume"> Resume </a>
+                </li>
+                <li class="nav-item active">
+                  <a class="nav-link" href="/contact">Contact</a>
+                </li>
+              </ul>
+              <form class="form-inline">
+                <button class="btn  my-2 my-sm-0 nav_search-btn" type="submit"></button>
+              </form>
+            </div>
+          </div>
+        </nav>
+      </div>
+    </header>
+    <!-- end header section -->
+
+  </div>
+
+
+  <div class="body_bg layout_padding">
+
+
+    <!-- contact section -->
+    <form  id="form-sub"  class="php-email-form-1 mt-4" >
+      <div class="row">
+        <div class="col-md-6 form-group">
+          <!-- <input type="text" name="name"  class="form-control" id="name" onblur="namecheck()" placeholder="Your Name" required> -->
+          <input id="name" type="text" name="name" class="form-control" placeholder="Name" required onblur="namecheck()">
+          <label id="nmlabel" for="name" style="display: none; color:red;">This field is requierd</label>
+          <label id="nmlabel-01" for="name" style="display: none; color:red;">Name does't start with number</label>
+          <label id="nmlabel-02" for="name" style="display: none; color:red;">Name does't containe special charecters</label>
+        </div>
+        <div class="col-md-6 form-group mt-3 mt-md-0">
+          <!-- <input type="email"  class="form-control" name="email" id="email" placeholder="Your Email" required> -->
+          <input id="email" type="email" name="email" class="form-control" placeholder="Email Address" required onblur="emailcheck()">
+                    <label id="el" for="name" style="display: none; color:red;">This field is requierd</label>
+                    <label id="el-01" for="name" style="display: none; color:red;">Email does't start with number</label>
+                    <label id="el-02" for="name" style="display: none; color:red;">Email is invalid</label>
+        </div>
+      </div>
+      <div class="form-group mt-3">
+        <input type="text" class="form-control"  name="subject" id="subject" placeholder="Subject" required onblur="checksubject()">
+        <label id="es" for="subject" style="display: none; color:red;">This field is requierd</label>
+          
+      </div>
+      <div class="form-group mt-3">
+        <!-- <textarea class="form-control"  name="message" rows="5" placeholder="Message" required></textarea> -->
+        <textarea id="msg" name="message" class="form-control" rows="4" placeholder="Enter your message" required onblur="msgcheck()"> </textarea>
+                <label id="ml" for="name" style="display: none; color:red;">This field is requierd</label>
+                <label id="ml-01" for="name" style="display: none; color:red;">Minimum 50 letters</label>
+      </div>
+      <div class="my-3">
+      
+      <div class="text-center"><button type="submit" >Send Message</button></div>
+    </form>
+
+  </div>
+
+    <!-- end contact section -->
+
+  </div>
+  <!-- info section -->
+<!-- 
+  <section class="info_section layout_padding">
+    <div class="footer_contact">
+      <div class="heading_container">
+        <h2>
+          Contact Us
+        </h2>
+      </div>
+      <div class="box">
+        <a href="" class="img-box">
+          <img src="images/location.png" alt="" class="img-1">
+          <img src="images/location-o.png" alt="" class="img-2">
+        </a>
+        <a href="" class="img-box">
+          <img src="images/call.png" alt="" class="img-1">
+          <img src="images/call-o.png" alt="" class="img-2">
+        </a>
+        <a href="" class="img-box">
+          <img src="images/envelope.png" alt="" class="img-1">
+          <img src="images/envelope-o.png" alt="" class="img-2">
+        </a>
+      </div>
+    </div>
+
+
+  </section> -->
+
+
+  <!-- end info section -->
+
+  <!-- footer section -->
+  <section class="container-fluid footer_section">
+
+  </section>
+  <!-- footer section -->
+
+  <script type="text/javascript" src="{% static 'js/jquery-3.4.1.min.js' %}"></script>
+  <script type="text/javascript" src="{% static 'js/bootstrap.js' %}"></script>
+
+</body>
+
+</html>
